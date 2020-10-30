@@ -10,6 +10,8 @@ public class TreeClass {
     private String treeType;
     private Boolean treeInGoodHealth;
 
+    //Constructor Function To Create A Single Tree
+
     public TreeClass(Integer treeID, Integer treeAge, String treeType, Boolean treeInGoodHealth) {
         this.treeID = treeID;
         this.treeAge = treeAge;
@@ -17,10 +19,12 @@ public class TreeClass {
         this.treeInGoodHealth = treeInGoodHealth;
     }
 
-    public Integer getTreeID() {
+    //******* Attempt At A Getter Function To Return A Tree By It's Unique ID
+    public static Integer getTreeID(Integer treeID) {
         return treeID;
     }
 
+    // Method To Set Up An ArrayList Of Unique ID's. Want To Use These IDs To Create A Grove Of Trees.
     public static ArrayList setID(Integer numberOfTrees) throws IOException {
         if (numberOfTrees <= 0) throw new IOException("IOException Occurred");
 
