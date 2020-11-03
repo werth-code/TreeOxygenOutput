@@ -24,7 +24,6 @@ public class TreeClass {
         return treeID;
     }
 
-    // Method To Set Up An ArrayList Of Unique ID's. Want To Use These IDs To Create A Grove Of Trees.
     public static ArrayList setID(Integer numberOfTrees) throws IOException {
         if (numberOfTrees <= 0) throw new IOException("IOException Occurred");
 
@@ -39,20 +38,29 @@ public class TreeClass {
 
     //METHOD THAT TAKES OUR ARRAYLIST OF IDS AND CREATES A TREE OBJECT FOR EACH ONE.
 
-    // Is there any way to not loop within a loop but assign each tree a unique id?
     public static String plantTrees(Integer gpsCoordinates, Integer rows, Integer columns) throws IOException {
         if (rows <= 0 || columns <= 0) throw new IOException("IOException Occurred");
 
-        String visualTreeMap = "";
-        int treeRows = 1;
+        Integer totalTrees = (rows * columns);
+        ArrayList treesWithIDs = setID(totalTrees);
 
-        for(int i = 0; i < rows; i++) { // I need to pass in a unique ID for each tree - any way without nesting loops?
-            visualTreeMap += "|" + String.format("  Tree Row %d |", treeRows).repeat(columns) + "\n";
-            treeRows+=1;
+        String visualTreeMap = "";
+
+//        if (myDigit >= 1) {
+//            concatLine = String.format(concatLine + "%3d |", myDigit);
+//            if (j == width) {
+//                concatLine = concatLine + "\n"; 
+
+        int count = 0;
+        for(int i = 0; i < rows; i++) {
+            visualTreeMap += "\n";
+            for(int j = 0; j < columns; j++) {
+                visualTreeMap += " |" + String.format(" Tree ID " + treesWithIDs.get(count));
+                count++;
+            }
         }
         return ("Tree Location " + gpsCoordinates + "\n") + visualTreeMap;
     }
-
 
 }
 
