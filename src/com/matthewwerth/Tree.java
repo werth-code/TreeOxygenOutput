@@ -16,7 +16,7 @@ public class Tree {
     }
 
     public  String returnAllTreeInfo(UUID treeID) { //Method should accept an ID number and return the resulting information.
-        return String.format("Tree Age: " + getTreeAge() + "Type: " + getTreeType() + "In Good Health? " + getTreeInGoodHealth() + "\n");
+        return String.format("Tree Age: " + getTreeAge() + " Type: " + getTreeType() + " In Good Health? " + getTreeInGoodHealth() + "\n");
     }
 
     public static UUID setSingleTreeID() {

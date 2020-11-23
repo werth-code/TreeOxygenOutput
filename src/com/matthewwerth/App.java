@@ -9,7 +9,7 @@ public class App {
         // Create a single tree with some properties.
         Tree tree = new Tree(2, TypeOfTree.EVERGREEN, true);
         UUID treeID = tree.getTreeID();
-        tree.returnAllTreeInfo(treeID);
+        System.out.println(tree.returnAllTreeInfo(treeID));
 
         // Create a new ArrayList to represent an orchard or set of trees.
         // Loop through given number of trees and set up new tree object with a unique ID for each one.
