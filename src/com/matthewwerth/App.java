@@ -17,8 +17,6 @@ public class App {
         // Show All Of Our Trees In Rows & Columns
 
         Orchard appleOrchard = new Orchard(0, TypeOfTree.FRUIT_BEARING);
-        UUID appleOrchardID = appleOrchard.getOrchardID();
-        appleOrchard.returnAllTreeInfo(appleOrchardID);
         System.out.println(appleOrchard.visualRepresentationOfOrchard(2, 3));
 
     }

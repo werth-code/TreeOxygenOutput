@@ -17,10 +17,15 @@ public class Orchard  {
         this.treeInGoodHealth = true;
     }
 
-    public void returnAllTreeInfo(UUID treeID) { //Method should accept an ID number and return the resulting information.
-        System.out.println("Tree Age: " + getOrchardAge());
-        System.out.println("Type: " + getTreeType());
-        System.out.println("In Good Health? " + getTreeInGoodHealth() + "\n");
+//    public String returnAllTreeInfo(UUID treeID) { //Method should accept an ID number and return the resulting information.
+//        System.out.println("Tree Age: " + getOrchardAge());
+//        System.out.println("Type: " + getTreeType());
+//        System.out.println("In Good Health? " + getTreeInGoodHealth() + "\n");
+//        return null;
+//    }
+
+    public String returnAllTreeInfo(UUID treeID) {
+        return String.format("Tree ID  " + treeID + "  Tree Age: " + treeAge + "  Type:  " + treeType + "  In Good Health?  " + treeInGoodHealth + "\n");
     }
 
     public static UUID setOrchardID() {
@@ -42,13 +47,6 @@ public class Orchard  {
 
     public Boolean getTreeInGoodHealth() {
         return treeInGoodHealth;
-    }
-
-    //Attempt at override?? Not working?? Whhhhhyyyyyy
-    @Override
-    public String toString() {
-        return String.format(orchardID + "Tree Age: " + treeAge + " Type: "
-                + treeType + " In Good Health? " + treeInGoodHealth + "\n");
     }
 
 
@@ -75,7 +73,9 @@ public class Orchard  {
         for(int i = 0; i < rows; i++) {
             visualTreeMap += "\n";
             for(int j = 0; j < columns; j++) {
-                visualTreeMap += " |" + " Tree ID: " + orchard.get(count)  + " |";
+                UUID singleTreeID = orchard.get(count).getTreeID();
+                String treeInfo = returnAllTreeInfo(singleTreeID);
+                visualTreeMap += treeInfo;
                 count++;
             }
         }
