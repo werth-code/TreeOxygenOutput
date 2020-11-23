@@ -1,19 +1,25 @@
 package com.matthewwerth;
 import java.io.IOException;
+import java.util.UUID;
 
 public class App {
 
     public static void main(String[] args) throws IOException {
 
-        Tree tree = new Tree(Tree.setSingleTreeID(), 2, TypeOfTree.EVERGREEN, true);
-        tree.returnAllTreeInfo();
-        //Create a new ArrayList and set each value to a new ID number.
+        // Create a single tree with some properties.
+        Tree tree = new Tree(2, TypeOfTree.EVERGREEN, true);
+        UUID treeID = tree.getTreeID();
+        tree.returnAllTreeInfo(treeID);
 
-        //Show All Of Our Trees In Rows & Columns
-        String orchard = Orchard.visualRepresentationOfOrchard(56372, 3, 3);
-        System.out.println(orchard);
+        // Create a new ArrayList to represent an orchard or set of trees.
+        // Loop through given number of trees and set up new tree object with a unique ID for each one.
+        // Add created trees to our ArrayList.
+        // Show All Of Our Trees In Rows & Columns
 
-        //Loop through ID numbers and create a unique tree object for each one.
+        Orchard appleOrchard = new Orchard(0, TypeOfTree.FRUIT_BEARING);
+        UUID appleOrchardID = appleOrchard.getOrchardID();
+        appleOrchard.returnAllTreeInfo(appleOrchardID);
+        System.out.println(appleOrchard.visualRepresentationOfOrchard(2, 3));
 
     }
 }

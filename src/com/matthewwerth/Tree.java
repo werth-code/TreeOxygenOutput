@@ -8,17 +8,17 @@ public class Tree {
     private TypeOfTree treeType;
     private Boolean treeInGoodHealth;
 
-    //Constructor Function To Create A Tree
-
-    public Tree(UUID treeID, Integer treeAge, TypeOfTree treeType, Boolean treeInGoodHealth) {
-        this.treeID = treeID;
+    public Tree(Integer treeAge, TypeOfTree treeType, Boolean treeInGoodHealth) {
+        this.treeID = setSingleTreeID();
         this.treeAge = treeAge;
         this.treeType = treeType;
         this.treeInGoodHealth = treeInGoodHealth;
     }
 
-    public void returnAllTreeInfo() {
-        System.out.println(getTreeID() + " " + getTreeAge() + " " + getTreeType() + " " + getTreeInGoodHealth());
+    public void returnAllTreeInfo(UUID treeID) { //Method should accept an ID number and return the resulting information.
+        System.out.println("Tree Age: " + getTreeAge());
+        System.out.println("Type: " + getTreeType());
+        System.out.println("In Good Health? " + getTreeInGoodHealth() + "\n");
     }
 
     public static UUID setSingleTreeID() {
