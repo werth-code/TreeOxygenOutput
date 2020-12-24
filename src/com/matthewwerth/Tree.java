@@ -15,8 +15,8 @@ public class Tree {
         this.treeInGoodHealth = treeInGoodHealth;
     }
 
-    public  String returnAllTreeInfo(UUID treeID) { //Method should accept an ID number and return the resulting information.
-        return String.format("Tree Age: " + getTreeAge() + " Type: " + getTreeType() + " In Good Health? " + getTreeInGoodHealth() + "\n");
+    public String returnAllTreeInfo() { //Method should accept an ID number and return the resulting information.
+        return String.format("Tree ID: " + treeID + "\nType: " + getTreeType() + "\nAge: " + getTreeAge() + "\nIn Good Health: " + getTreeInGoodHealth() + "\n");
     }
 
     public static UUID setSingleTreeID() {

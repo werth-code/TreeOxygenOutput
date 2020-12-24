@@ -20,13 +20,11 @@ class TreeTest {
     @Test
     void returnAllTreeInfo() {
         // Given
-        // public Tree tree = new Tree(Tree.setSingleTreeID(), 1, TypeOfTree.EVERGREEN, true);
-        UUID treeID = tree.getTreeID();
         // When
-        String expected = "Tree Age: 2\n" + "Type: EVERGREEN\n" + "In Good Health? true";
-        //String actual = tree.returnAllTreeInfo(treeID);
+        String actual = tree.returnAllTreeInfo();
+        System.out.println(actual);
         // Then
-        //Assert.assertEquals(actual, expected);
+        Assert.assertNotNull(actual);
 
     }
 
@@ -54,11 +52,11 @@ class TreeTest {
     @Test
     void getTreeAge() {
         // Given
-        // public Tree tree = new Tree(Tree.setSingleTreeID(), 1, TypeOfTree.EVERGREEN, true);
         // When
-        Integer treeAge = tree.getTreeAge();
+        Integer expected = 1;
+        Integer actual = tree.getTreeAge();
         // Then
-        Assert.assertEquals(java.util.Optional.of(1), treeAge); /////
+        Assert.assertEquals(expected, actual); /////
     }
 
     @Test
